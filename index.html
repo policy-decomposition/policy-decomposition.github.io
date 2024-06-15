@@ -115,9 +115,6 @@
     <div class="columns is-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3" style="text-align: left;">Overview</h2>
-
-        
-
         <!-- Interpolating. -->
         <div class="content has-text-justified">
 
@@ -128,23 +125,44 @@
           
 
           <p>
-            Our method decomposes long-horizon, multi-object policy learning into a series of sample-efficient sub-policies that can be trained independently using an <em>oriented affordance-centric</em> coordinate frame located on a sub-task-specific object. Each sub-policy is both spatially and intra-category invariant allowing for compositional generalisation to a wide range of variations in the downstream long-horizon task. The sub-policies are augmented to learn a notion of self-progress allowing them to autonomously switch between sub-policies without the need for a learned arbitrator.             
+            We train a series of sample-efficient diffusion sub-policies that exhibit spatial and intra-category invariance, leveraging local <b>affordance-centric task-frames</b> anchored to objects. By orienting these relative frames across subtasks, we ensure the robot consistently operates within the data support of the subsequent sub-policy. This methodology allows for seamless composition of sub-policies to tackle complex <b>long-horizon tasks</b>. Additionally, each sub-policy's action-space is enhanced to incorporate a notion of self-progress, enabling autonomous transitions between sub-policies upon sub-task completion eliminating the need for a learned arbitrator.         
           </p>
 
 
           <p style="color:red;">
             Please refer to attached supplementary material (.zip) for more results and details.
           </p>  
-
-
-  
         </div>
-
-        
-       
-
         <br/>
         <!--/ Interpolating. -->
+
+        <h2 class="title is-small" style= "text-align: left;">Long-Horizon Manipulation</h2>
+        <div class="content has-text-justified">
+          <p style="text-align:center;">
+            <image src="Images/task_composition.png" class="img-responsive">   
+          </p>   
+        </div>
+
+        <h2 class="title is-small" style= "text-align: left;">Spatial Generalisation</h2>
+        <div class="content has-text-justified">
+          <p style="text-align:center;">
+            <image src="Images/spatial.png" class="img-responsive">   
+          </p>   
+        </div>
+
+        <h2 class="title is-small" style= "text-align: left;">Intra-Category Generalisation</h2>
+        <div class="content has-text-justified">
+          <p style="text-align:center;">
+            <image src="Images/intra_cat.png" class="img-responsive">   
+          </p>   
+        </div>
+
+        <h2 class="title is-small" style= "text-align: left;">Closed-Loop Control</h2>
+        <div class="content has-text-justified">
+          <p style="text-align:center;">
+            <image src="Images/closed_loop.png" class="img-responsive">   
+          </p>   
+        </div>
 
       </div>
     </div>
