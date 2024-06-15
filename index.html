@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Affordance-Centric Policy Decomposition: Sample Efficient Robot Policy Learning for Long Horizon Manipulation</title>
-
 
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
@@ -16,17 +16,6 @@
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-PFJ2DFW');</script>
   <!-- End Google Tag Manager -->
-  <!-- <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-PYVRSFMDRL');
-  </script> -->
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -43,6 +32,17 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  
+  <style>
+    .img-responsive {
+      max-width: 100%;
+      height: auto;
+    }
+    .video-responsive {
+      width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
 
 <body>
@@ -51,192 +51,123 @@
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <!-- <h1 class="title is-1 publication-title">Affordance-Centric Policy Decomposition: </br>
-              Sample Efficient Robot Policy Learning for Long Horizon Manipulation</h1> -->
-
-              <h1 class="title is-1 publication-title">
-                Affordance-Centric Policy Decomposition: <img src="Images/pi_decom.png" style="height: 0.72em;"> </br>
-                <span style="font-size: 0.9em;">Sample Efficient Robot Policy Learning for Long Horizon Manipulation</span>
-              </h1>
-              
-
-
-
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-<!--     Paper video. -->
-<div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-<!--         <h2 class="title is-3">Video</h2> -->
-        <div class="publication-video">
-          <video id="v0" width="100%" autoplay controls muted loop playsinline>
-                       <source src="Images/sayplan_compressed.mp4" type="video/mp4">
-          </video>
-
-        </div>
-      </div>
-</div>
-<!--/ Paper video. -->
-
-
-
-
-	  
-<br>
-
-	  
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Long-horizon manipulation tasks involving multiple different objects present several challenges for imitation learning, with resulting policies exhibiting poor sample efficiency, generalisation, and modularity. Central to these limitations is the use of images and <em>absolute</em> coordinate systems to capture the state of the world. Without extensive demonstration datasets, these representations constrain the policy to operate over a closed set of spatial locations, intra-category instances, and even task variations. In this paper, we present a method to address these challenges using <em>affordance-centric</em> coordinate frames. By appropriately reorienting this frame and training a state-based policy using this <em>relative</em> coordinate system, we demonstrate that we can not only learn highly sample-efficient manipulation behaviours but also generalise to a wide range of spatial and intra-category object variations. More importantly, we show that this representation allows us to learn independent sub-policies that can be seamlessly composed together to solve complex, long-horizon, multi-object tasks, with the modularity for compositional generalisation to new task variations. We extensively validate our approach on a real-world tea-serving task involving 5 different objects, 13 intra-category object variations, and 7 different sub-tasks exhibiting a vast range of spatial variations, demonstrating our ability to solve the entire long-horizon task with the equivalent of only 10 demonstrations.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->  
-  </div>
-
-<br>
-<br>
-
-
-    <!-- Approach. -->
-    <div class="columns is-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3" style="text-align: left;">Overview</h2>
-        <!-- Interpolating. -->
-        <div class="content has-text-justified">
-
-          <p style="text-align:center;">
-            <image src="Images/main.png" class="img-responsive">   
-  	   
-          </p>
-          
-
-          <p>
-            We train a series of sample-efficient diffusion sub-policies that exhibit spatial and intra-category invariance, leveraging local <b>affordance-centric task-frames</b> anchored to objects. By orienting these relative frames across subtasks, we ensure the robot consistently operates within the data support of the subsequent sub-policy. This methodology allows for seamless composition of sub-policies to tackle complex <b>long-horizon tasks</b>. Additionally, each sub-policy's action-space is enhanced to incorporate a notion of self-progress, enabling autonomous transitions between sub-policies upon sub-task completion eliminating the need for a learned arbitrator.         
-          </p>
-
-
-          <p style="color:red;">
-            Please refer to attached supplementary material (.zip) for more results and details.
-          </p>  
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <h2 class="title is-small" style= "text-align: left;">Long-Horizon Manipulation</h2>
-        <div class="content has-text-justified">
-          <p style="text-align:center;">
-            <image src="Images/task_composition.png" class="img-responsive">   
-          </p>   
-          <p>
-            We can seamlessly compose a series of sub-policies to solve complex, long-horizon, multi-object manipulation tasks. Each sub-policy is trained with respect to its own affordance-centric task-frame as shown above. The resulting spatial invariance allows for compositional generalisation to a wide range of object and inter-object spatial variations when solving long-horizon, multi-object tasks.  
-          </p>
-        </div>
-
-        <h2 class="title is-small" style= "text-align: left;">Spatial Generalisation</h2>
-        <div class="content has-text-justified">
-          <p style="text-align:center;">
-            <image src="Images/spatial.png" class="img-responsive">   
-          </p>   
-        </div>
-
-        <h2 class="title is-small" style= "text-align: left;">Intra-Category Generalisation</h2>
-        <div class="content has-text-justified">
-          <p style="text-align:center;">
-            <image src="Images/intra_cat.png" class="img-responsive">   
-          </p>   
-        </div>
-
-        <h2 class="title is-small" style= "text-align: left;">Closed-Loop Control</h2>
-        <div class="content has-text-justified">
-          <p style="text-align:center;">
-            <image src="Images/closed_loop.png" class="img-responsive">   
-          </p>   
-        </div>
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3" style="text-align: left;">Results</h2>
-
-        <!-- <p style="text-align: left;">
-          Autonomous real-world deployment of the generated plan on a mobile manipulator robot using a low-level visually grounded motion controller. We pre-constructed a full 3D scene graph of an office floor spanning 36 rooms and containing 150 different assets and objects that the agent can interact with. Note the ability of the agent to generate grounded plans across multiple rooms.
-        </p> -->
-
-        <br>
-
-        <section class="hero is-light is-small">
-          <div class="hero-body">
-            <div class="container">
-              <div id="results-carousel" class="carousel results-carousel">
-                <div class="item item-steve">
-                  <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-                    <source src="Images/peter_banana_final.mp4"
-                            type="video/mp4">
-                  </video>
+            <h1 class="title is-1 publication-title">
+              Affordance-Centric Policy Decomposition: <img src="Images/pi_decom.png" style="height: 0.72em;"> </br>
+              <span style="font-size: 0.9em;">Sample Efficient Robot Policy Learning for Long Horizon Manipulation</span>
+            </h1>
+            <section class="section">
+              <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                  <div class="column is-four-fifths">
+                    <div class="publication-video">
+                      <video id="v0" class="video-responsive" autoplay controls muted loop playsinline>
+                        <source src="Images/sayplan_compressed.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
                 </div>
-                <div class="item item-chair-tp">
-                  <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-                    <source src="Images/dimity_stapler.mp4"
-                            type="video/mp4">
-                  </video>
+                <br>
+                <div class="columns is-centered has-text-centered">
+                  <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                      <p>
+                        Long-horizon manipulation tasks involving multiple different objects present several challenges for imitation learning, with resulting policies exhibiting poor sample efficiency, generalisation, and modularity. Central to these limitations is the use of images and <em>absolute</em> coordinate systems to capture the state of the world. Without extensive demonstration datasets, these representations constrain the policy to operate over a closed set of spatial locations, intra-category instances, and even task variations. In this paper, we present a method to address these challenges using <em>affordance-centric</em> coordinate frames. By appropriately reorienting this frame and training a state-based policy using this <em>relative</em> coordinate system, we demonstrate that we can not only learn highly sample-efficient manipulation behaviours but also generalise to a wide range of spatial and intra-category object variations. More importantly, we show that this representation allows us to learn independent sub-policies that can be seamlessly composed together to solve complex, long-horizon, multi-object tasks, with the modularity for compositional generalisation to new task variations. We extensively validate our approach on a real-world tea-serving task involving 5 different objects, 13 intra-category object variations, and 7 different sub-tasks exhibiting a vast range of spatial variations, demonstrating our ability to solve the entire long-horizon task with the equivalent of only 10 demonstrations.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="item item-shiba">
-                  <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-                    <source src="Images/sayplan_compressed.mp4"
-                            type="video/mp4">
-                  </video>
+                <br><br>
+                <div class="columns is-centered">
+                  <div class="column is-four-fifths">
+                    <h2 class="title is-3" style="text-align: left;">Overview</h2>
+                    <div class="content has-text-justified">
+                      <p style="text-align:center;">
+                        <img src="Images/main.png" class="img-responsive">
+                      </p>
+                      <p>
+                        We train a series of sample-efficient diffusion sub-policies that exhibit spatial and intra-category invariance, leveraging local <b>affordance-centric task-frames</b> anchored to objects. By orienting these relative frames across subtasks, we ensure the robot consistently operates within the data support of the subsequent sub-policy. This methodology allows for seamless composition of sub-policies to tackle complex <b>long-horizon tasks</b>. Additionally, each sub-policy's action-space is enhanced to incorporate a notion of self-progress, enabling autonomous transitions between sub-policies upon sub-task completion eliminating the need for a learned arbitrator.
+                      </p>
+                      <p style="color:red;">
+                        Please refer to attached supplementary material (.zip) for more results and details.
+                      </p>
+                    </div>
+                    <br/>
+                    <h2 class="title is-small" style="text-align: left;">Long-Horizon Manipulation</h2>
+                    <div class="content has-text-justified">
+                      <p style="text-align:center;">
+                        <img src="Images/task_composition.png" class="img-responsive">
+                      </p>
+                      <p>
+                        We can seamlessly compose a series of sub-policies to solve complex, long-horizon, multi-object manipulation tasks. Each sub-policy is trained with respect to its own affordance-centric task-frame as shown above. The resulting spatial invariance allows for compositional generalisation to a wide range of object and inter-object spatial variations when solving long-horizon, multi-object tasks.
+                      </p>
+                    </div>
+                    <h2 class="title is-small" style="text-align: left;">Spatial Generalisation</h2>
+                    <div class="content has-text-justified">
+                      <p style="text-align:center;">
+                        <img src="Images/spatial.png" class="img-responsive">
+                      </p>
+                    </div>
+                    <h2 class="title is-small" style="text-align: left;">Intra-Category Generalisation</h2>
+                    <div class="content has-text-justified">
+                      <p style="text-align:center;">
+                        <img src="Images/intra_cat.png" class="img-responsive">
+                      </p>
+                    </div>
+                    <h2 class="title is-small" style="text-align: left;">Closed-Loop Control</h2>
+                    <div class="content has-text-justified">
+                      <p style="text-align:center;">
+                        <img src="Images/closed_loop.png" class="img-responsive">
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="item item-fullbody">
-                  <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-                    <source src="Images/sayplan_compressed.mp4"
-                            type="video/mp4">
-                  </video>
+                <div class="columns is-centered">
+                  <div class="column is-full-width">
+                    <h2 class="title is-3" style="text-align: left;">Results</h2>
+                    <br>
+                    <section class="hero is-light is-small">
+                      <div class="hero-body">
+                        <div class="container">
+                          <div id="results-carousel" class="carousel results-carousel">
+                            <div class="item item-steve">
+                              <video poster="" id="steve" class="video-responsive" autoplay controls muted loop playsinline>
+                                <source src="Images/peter_banana_final.mp4" type="video/mp4">
+                              </video>
+                            </div>
+                            <div class="item item-chair-tp">
+                              <video poster="" id="chair-tp" class="video-responsive" autoplay controls muted loop playsinline>
+                                <source src="Images/dimity_stapler.mp4" type="video/mp4">
+                              </video>
+                            </div>
+                            <div class="item item-shiba">
+                              <video poster="" id="shiba" class="video-responsive" autoplay controls muted loop playsinline>
+                                <source src="Images/sayplan_compressed.mp4" type="video/mp4">
+                              </video>
+                            </div>
+                            <div class="item item-fullbody">
+                              <video poster="" id="fullbody" class="video-responsive" autoplay controls muted loop playsinline>
+                                <source src="Images/sayplan_compressed.mp4" type="video/mp4">
+                              </video>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
                 </div>
               </div>
-            </div>
+            </section>
           </div>
-        </section>
-
-
-
+        </div>
       </div>
     </div>
-
-    
-  
-
-
-<!-- 
-<p style="text-align:center;">
-	<image src="Images/SayPlan_Overview_Simple.png" class="img-responsive">        	   
-</p> -->
-	
-</section>
-
-<div class="row">
-
-
-
-
-
-
+  </section>
 </body>
 
 </html>
