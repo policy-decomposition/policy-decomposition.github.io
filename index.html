@@ -70,13 +70,16 @@
                     <source src="Images/main1.mp4"
                             type="video/mp4">
                   </video>
-                  <p class="has-text-centered">
-                    <span class="dnerf">Affordance-Centric Policy Decomposition <img src="Images/pi_decom.png" style="height: 0.72em;"></span> factorises <b>multi-object</b>, <b>long-horizon</b> manipulation tasks into a series of sub-policies trained with respect to an affordance-centric task frame.
-                    Each diffusion policy is trained to additionally predict <b>self-progress</b> across a sub-task enabling it to autonomously transition between sub-tasks in order to complete longer-horizon tasks.
+                  <p class="has-text-centered" style="color:gray;">
+                    Solving <b>long-horizon, multi-object </b> tasks using the equivalent of only 10 full task demonstrations.
                   </p>
                 </div>
               </div>
             </section>
+
+            <p style="color:red;">
+              Please refer to attached supplementary material (.zip) for more results and details.
+            </p>
 
 
             <section class="section">
@@ -102,23 +105,46 @@
                       <p style="text-align:center;">
                         <img src="Images/main.png" class="img-responsive">
                       </p>
+
+                      <p class="has-text-centered" style="color:gray;">
+                        <span class="dnerf" >Affordance-Centric Policy Decomposition <img src="Images/pi_decom.png" style="height: 0.72em;"></span> factorises <b>multi-object</b>, <b>long-horizon</b> manipulation tasks into a series of sub-policies trained with respect to an affordance-centric task frame. The relative task frame allows us to learn policies that are spatially invariant, while the specifc placement of the frames at a task-relevant affordance-centric region on an object allows for intra-category invariance. Each diffusion policy is trained to additionally predict <b>self-progress</b> across a sub-task enabling it to autonomously transition between sub-tasks in order to complete longer-horizon tasks.
+                      </p>
                       <p>
-                        We train a series of sample-efficient diffusion sub-policies that exhibit spatial and intra-category invariance, leveraging local <b>affordance-centric task-frames</b> anchored to objects. By orienting these relative frames across subtasks, we ensure the robot consistently operates within the data support of the subsequent sub-policy. This methodology allows for seamless composition of sub-policies to tackle complex <b>long-horizon tasks</b>. Additionally, each sub-policy's action-space is augmented to include a notion of self-progress, enabling autonomous transitions between sub-policies upon sub-task completion eliminating the need for a learned arbitrator.
                       </p>
-                      <p style="color:red;">
-                        Please refer to attached supplementary material (.zip) for more results and details.
-                      </p>
+
+                        <!-- <h6> Affordance-Centric Policy Decomposition </h6>
+
+                          <p>In order to learn sample effient, and generalisable policies for long-horizon, multi-object manipulation tasks, we propose a novel method that leverages <b>affordance-centric task-frames</b>. We decompose policy learning for such tasks into a series of sub-policies each of which is trained to solve a sub-task with respect to an affordance-centric task-frame. To improve data efficiency, we re-orient this frame such that it's <b>funnel axis</b> always points towards the current tool-frame of the robot ensuring the robot consistently operates within the data support of the subsequent sub-policy. The relative task frame allows us to learn policies that are spatially invariant, while the specifc placement of the frames at a task-relevant affordance-centric region on an object allows for intra-category invariance. Each sub-policy is trained using Diffusion Policy from only 10 demonstrations using a fixed set of object instances.</p>
+
+                          <h6> Affordance-Centric Policy Chaining </h6>
+                          
+                          <p> To autonomously chain the sub-policies to solve longer-horizon tasks, we introduce the concept of <b>self-progress</b> to each sub-policy's action-space. This allows the sub-policy to autonomously transition to the next sub-policy upon completion of the current sub-task. This eliminates the need for a learned arbitrator and allows for seamless composition of sub-policies to solve complex, long-horizon, multi-object tasks.</p> -->
+                                                
+                      
                     </div>
                     <br/>
+
+                    <h2 class="title is-small" style="text-align: left; font-size: 1.8  rem;" >Results</h2>
+
                     <h2 class="title is-small" style="text-align: left; font-size: 1.2rem;">Long-Horizon Manipulation</h2>
+
+                    
+                   
                     <div class="content has-text-justified">
                       <p style="text-align:center;">
                         <img src="Images/task_composition.png" class="img-responsive">
-                      </p>
-                      <p>
-                        We can seamlessly compose a series of sub-policies to solve complex, long-horizon, multi-object manipulation tasks. Each sub-policy is trained with respect to its own affordance-centric task-frame as shown above. The resulting spatial invariance allows for compositional generalisation to a wide range of object and inter-object spatial variations when solving long-horizon, multi-object tasks.
+                    
+                        <p class="has-text-centered" style="color:gray;font-size: 0.9rem;">
+                          We demonstrate the ability to learn complex long-horizon, multi-object tasks involving prehensile and non-prehensile manipulation actions such as scooping, pouring and pushing. The resulting spatial invariance allows for compositional generalisation to a wide range of object and inter-object spatial variations when solving multi-object tasks.
+                        </p>
+
                       </p>
                     </div>
+
+
+
+
+
                     <h2 class="title is-small" style="text-align: left; font-size: 1.2rem;">Spatial Generalisation</h2>
                     <div class="content has-text-justified">
                       <p style="text-align:center;">
@@ -142,7 +168,16 @@
                           <source src="Images/spatial_3.mp4" type="video/mp4">
                         </video>
                       </div>
+                      
                     </div>
+
+                    <p class="has-text-centered" style="color:gray;font-size: 0.9rem;">
+                      All policies are trained using demonstrations collected within a small workspace. We demonstrate the ability to generalise to a wide range of spatial variations beyond this training workspace, including object and intra-object placement variations.  
+                    </p>
+
+                    <br>
+
+                    
 
 
                     <h2 class="title is-small" style="text-align: left; font-size: 1.2rem;">Intra-Category Generalisation</h2>
