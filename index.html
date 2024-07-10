@@ -227,38 +227,74 @@
                   
     
                     <p class="has-text-centered" style="color:gray;font-size: 0.9rem;">
-                      By abstracting away from image state representations and placing our task frames at affordance centric regions on objects, we demonstrate the ability for the resulting sub-policies to generalise to a wide range of intra-category object variations. Note: Each policy is trained using only a single object instance from the category.
+                      The specific placement of our affordance centric task frames allows us to capture the important task relevant regions on objects required for manipulation for a wide range of intra-category object variations. This allows us to abstract away from using images and allows for generalisation to a wide range of intra-category object variations from the 10 demonstrations collected on a single object category instance.
                     </p>
 
+
+
                     <br>
-
-
-
-                    <h2 class="title is-small" style="text-align: left; font-size: 1.2rem;">Closed-Loop Control with Distractors</h2>
-                    <div class="content has-text-justified">
-                      <p style="text-align:center;">
-                        <img src="Images/closed_loop.png" class="img-responsive">
-                      </p>
-                    </div>
+                    <h2 class="title is-small" style="text-align: left; font-size: 1.2rem;">Policy Robustness</h2>
 
                     <div class="columns is-centered">
                       <div class="column">
+                        <p class="has-text-centered" style="color:gray;font-size: 1.0rem;">
+                          Perturbations
+                        </p>
                         <video class="video-responsive" autoplay controls muted loop playsinline>
                           <source src="Images/dynamic_final.mp4" type="video/mp4">
                         </video>
+                        <p class="has-text-centered" style="color:gray;font-size: 0.9rem;">
+                          By training a closed-loop diffusion policy that operates on tracked affordance centric task frames, our policies can handle dynamic object disturbances during deployment.
+                        </p>
                       </div>
+
                       <div class="column">
+                        <p class="has-text-centered" style="color:gray;font-size: 1.0rem;">
+                          Distractor Objects
+                        </p>
                         <video class="video-responsive" autoplay controls muted loop playsinline>
                           <source src="Images/distractor_tea_pour.mp4" type="video/mp4">
+                        </video>
+                        <p class="has-text-centered" style="color:gray;font-size: 0.9rem;">
+                          Our simplified state representation allows us to learn policies that are robust to distractor objects in the environment.
+                        </p>
+                      </div>
+                    </div>
+
+                    
+
+                    <br>
+                    <p class="has-text-centered" style="color:gray;font-size: 1.0rem;">
+                      Robot Base Movements
+                    </p>
+                    <div class="columns is-centered">
+                      <div class="column">
+                        <video class="video-responsive" autoplay controls muted loop playsinline>
+                          <source src="Images/teacup_place_moving_base.mp4" type="video/mp4">
+                        </video>
+                      </div>
+
+                      <div class="column">
+                        <video class="video-responsive" autoplay controls muted loop playsinline>
+                          <source src="Images/teapot_pour_mobile_base.mp4" type="video/mp4">
                         </video>
                       </div>
                     </div>
 
+                    
                     <p class="has-text-centered" style="color:gray;font-size: 0.9rem;">
-                      Our approach can handle dynamic changes in the environment and is robust to distractors in the workspace.
+                      By training policies with respect to a relative task frame located on objects, we can learn policies that are robust to robot base movements during deployment with applications to mobile manipulation.
                     </p>
+                    
+
+
 
                     <br>
+
+
+
+
+                    
 
                   </div>
                 </div>
