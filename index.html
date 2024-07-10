@@ -126,6 +126,34 @@
 
                     <h2 class="title is-small" style="text-align: left; font-size: 1.8  rem;" >Results</h2>
 
+                    <h2 class="title is-small" style="text-align: left; font-size: 1.2rem;">Simplifying Data Collection</h2>
+
+                    <div class="columns is-centered">
+                      <div class="column">
+
+                      <p class="has-text-justified" style="color:gray;font-size: 0.9rem;">
+                        We simplify data collection for long-horizon, multi-object tasks by training simpler, spatially invariant sub-policies. This approach allows us to collect demonstrations from a subset of the full workspace. The spatial invariance and state-based representation enable compositional generalisation to longer horizon tasks with more objects and spatial variations. We use fiducial markers to track affordance frames on objects for simple data processing, later replacing them with keypoint detectors and tracking algorithms. <b>Note:</b> All video demonstrations below use a single set of sub-policies trained from just 10 demonstrations with the objects and spatial variations shown on the right.
+                        
+                        
+                      </p>
+
+                      <br>
+                    </div>
+
+
+                    <div class="column">
+
+                     <img src="Images/data_collection.png" class="img-responsive">
+
+                      <br>
+                    </div>
+
+
+
+                    </div>
+
+
+
 
                     <h2 class="title is-small" style="text-align: left; font-size: 1.2rem;">Long-Horizon Manipulation</h2>
 
@@ -136,7 +164,7 @@
                         <img src="Images/task_composition.png" class="img-responsive">
                     
                         <p class="has-text-centered" style="color:gray;font-size: 0.9rem;">
-                          We demonstrate the ability to learn complex long-horizon, multi-object tasks involving prehensile and non-prehensile manipulation actions such as scooping, pouring and pushing. The resulting spatial invariance allows for compositional generalisation to a wide range of object and inter-object spatial variations when solving multi-object tasks.
+                          We demonstrate the ability to compose the resulting sub-policies to solve long-horizon, multi-object tasks involving prehensile and non-prehensile manipulation actions such as scooping, pouring and pushing. The spatial invariance exhibited by each policy allows for generalisation to compositional variations when solving longer-horizon tasks with multiple objects.
                         </p>
 
                       </p>
