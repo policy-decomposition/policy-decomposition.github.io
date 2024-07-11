@@ -42,6 +42,13 @@
       width: 100%;
       height: auto;
     }
+
+    .gradient-text {
+    background: linear-gradient(to right,  red,yellow, cyan, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
   </style>
 </head>
 
@@ -65,17 +72,16 @@
 
             <section class="hero teaser">
               <div class="container is-max-desktop">
-                <div class="hero-body">
-                  <video id="teaser" autoplay controls muted loop playsinline height="100%">
-                    <source src="Images/main1.mp4"
-                            type="video/mp4">
-                  </video>
-                  <p class="has-text-centered" style="color:gray;">
-                    Diffusion Policy solving <b>long-horizon, multi-object </b> tasks using the equivalent of only <b>10 full task demonstrations</b>.
-                  </p>
-                </div>
+                  <div class="hero-body">
+                      <video id="teaser" autoplay controls muted loop playsinline height="100%">
+                          <source src="Images/main1.mp4" type="video/mp4">
+                      </video>
+                      <p class="has-text-centered" style="color:gray;">
+                          Diffusion Policy solving <b>long-horizon, multi-object</b> tasks using the equivalent of only <b>10 full task demonstrations</b>. The colour <span class="gradient-text">gradient</span> of the diffused trajectory represents the predicted <b>self-progress</b> of the sub-policy for the current sub-task.
+                      </p>
+                  </div>
               </div>
-            </section>
+          </section>
 
             <p style="color:red;">
               Please refer to attached supplementary material (.zip) for more results and details.
