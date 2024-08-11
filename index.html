@@ -126,18 +126,39 @@
 
 
 
-            <section class="hero teaser">
-              <div class="container is-max-desktop">
-                  <div class="hero-body">
-                      <video id="teaser" autoplay controls muted loop playsinline height="100%">
-                          <source src="Images/main1.mp4" type="video/mp4">
-                      </video>
-                      <p class="has-text-centered" style="color:gray;">
-                          Diffusion Policy solving <b>long-horizon, multi-object</b> tasks using the equivalent of only <b>10 full task demonstrations</b>. The colour <span class="gradient-text">gradient</span> of the diffused trajectory represents the predicted <b>self-progress</b> of the sub-policy for the current sub-task. We additionally overlay the current affordance-centric task frame that the sub-policy is operating with respect to.
-                      </p>
-                  </div>
-              </div>
-          </section>
+              <section class="hero teaser">
+                <div class="container is-max-desktop">
+                    <div class="hero-body">
+                        <!-- First video, spans full width -->
+                        <div class="full-width-video" style="margin-bottom: 20px;">
+                            <video id="teaser1" autoplay controls muted loop playsinline width="100%">
+                                <source src="Images/main1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+            
+                        <!-- Two videos in a row underneath -->
+                        <div class="two-videos-row" style="display: flex; justify-content: space-between;">
+                            <div class="carousel-item" style="flex: 1; margin-right: 10px;">
+                                <video id="teaser2" autoplay controls loop playsinline width="100%">
+                                    <source src="Images/coffee_making_FINAL_compressed.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="carousel-item" style="flex: 1; margin-left: 10px;">
+                                <video id="teaser3" autoplay controls muted loop playsinline width="100%">
+                                    <source src="Images/shoe_racking_compressed.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        
+                        <p class="has-text-centered" style="color:gray; margin-top: 20px;">
+                            Diffusion Policy solving <b>long-horizon, multi-object</b> tasks using the equivalent of only <b>10 full task demonstrations</b>. The colour <span class="gradient-text">gradient</span> of the diffused trajectory represents the predicted <b>self-progress</b> of the sub-policy for the current sub-task. We additionally overlay the current affordance-centric task frame that the sub-policy is operating with respect to.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+            
+            
 
             <p style="color:red;">
               Please refer to attached supplementary material (.zip) for more results and details.
