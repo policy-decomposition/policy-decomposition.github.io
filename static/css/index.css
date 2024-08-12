@@ -125,6 +125,30 @@ body {
   font-size: 0;
 }
 
+
+.columns {
+  display: flex;
+  align-items: center;
+}
+
+.text-column {
+  display: flex;
+  align-items: center;
+}
+
+.video-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
 .results-carousel video {
   margin: 0;
   z-index:0;
