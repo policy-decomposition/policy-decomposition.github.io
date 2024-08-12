@@ -160,10 +160,7 @@
             
             
 
-            <p style="color:red;">
-              Please refer to attached supplementary material (.zip) for more results and details.
-            </p>
-
+  
 
             <section class="section">
               <div class="container is-max-desktop">
@@ -207,30 +204,56 @@
                     </div>
                     <br/>
 
-                    <h2 class="title is-small" style="text-align: left; font-size: 1.8  rem;" >Results</h2>
+                    <h2 class="title is-small" style="text-align: left; font-size: 1.8  rem;" >Key Insights</h2>
 
-                    <h2 class="title is-small" style="text-align: left; font-size: 1.2rem;">Simplifying Data Collection</h2>
+                    <h2 class="title is-small" style="text-align: left; font-size: 1.2rem;">Oriented Affordance Frame</h2>
 
                     <div class="columns is-centered">
                       <div class="column">
+                      <p class="has-text-justified" style="color:gray;font-size: 0.9rem;">
+                        We introduce the <b>oriented affordance task frame</b> for training sample efficient and composable diffusion policies. Using an affordance-centric task frame for policy learning enables spatial and intra-category generalisation. By orienting this task frame towards the tool frame of the robot at the start of each episode, we can concentrate the data support of the sub-policy around a known 'funnel axis'. This allows us to maximise the utility of only 10 demonstrations, with the ability to compose sub-policies to solve longer-horizon tasks by ensuring that the robot consistently operates within the data support of the subsequent sub-policy. Empirical results additionally show that the oriented frame anchors the task frame in tasks where the object is dynamic, preventing the robot from hitting joint limit violations.
+                      </p>
 
+                      <br>
+                    </div>
+                    <div class="column">
+                     <img src="Images/oriented_frame_gif_crop.gif" class="img-responsive" style="height: 250px; width: auto;">
+                      <br>
+                    </div>
+                    </div>
+
+                    <h2 class="title is-small" style="text-align: left; font-size: 1.2rem;">Policy Self-Progress</h2>
+
+                    <div class="columns is-centered">
+                      <div class="column">
+                      <p class="has-text-justified" style="color:gray;font-size: 0.9rem;">
+                         We introduce a simple introspective mechanism for policy learning based on the idea of predicting <b>self-progress</b> across a sub-task as an additional action output. This allows us to train sub-policies that can autonomously transition between sub-tasks in order to complete longer-horizon tasks without the need to train an additional arbitrator policy. Given the expressive multi-modality of diffusion policies, we found that a simple linspace() operator over the length of each demonstration served as a well-behaved signal for self-progress prediction as shown in the video.
+                      </p>
+
+                      <br>
+                    </div>
+                    <div class="column">
+                     <img src="Images/progress_ablation.gif" class="img-responsive">
+                      <br>
+                    </div>
+                    </div>
+
+
+
+                    <h2 class="title is-small" style="text-align: left; font-size: 1.8  rem;" >Results</h2>
+                    <h2 class="title is-small" style="text-align: left; font-size: 1.2rem;">Simplifying Data Collection</h2>
+                    <div class="columns is-centered">
+                      <div class="column">
                       <p class="has-text-justified" style="color:gray;font-size: 0.9rem;">
                         We simplify data collection for long-horizon, multi-object tasks by training simpler, spatially invariant sub-policies. This approach allows us to collect demonstrations from a subset of the full workspace. The spatial invariance and state-based representation enable compositional generalisation to longer horizon tasks with more objects and spatial variations. We use fiducial markers during data collection to track affordance frames on objects which simplifies dataset processing, later replacing them with keypoint detectors and tracking algorithms. <b>Note:</b> All video demonstrations below use a single set of sub-policies trained from just 10 demonstrations with the objects and spatial variations shown on the right.  
                       </p>
 
                       <br>
                     </div>
-
-
                     <div class="column">
-
                      <img src="Images/data_collection.png" class="img-responsive">
-
                       <br>
                     </div>
-
-
-
                     </div>
 
 
