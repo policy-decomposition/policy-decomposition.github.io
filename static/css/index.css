@@ -126,12 +126,12 @@ body {
 }
 
 
-.columns {
+/* .columns {
   display: flex;
   align-items: center;
-}
+} */
 
-.text-column {
+/* .text-column {
   display: flex;
   align-items: center;
 }
@@ -145,7 +145,7 @@ body {
 .img-responsive {
   max-width: 100%;
   height: auto;
-}
+}   */
 
 
 
